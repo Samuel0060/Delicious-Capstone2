@@ -8,20 +8,20 @@ public class SandwichMaker {
     private MeatType meat;
     private boolean extraMeat;
     private CheeseType cheese;
-    private List<RegularToppings> regularToppings;
     private boolean extraCheese;
+    private List<RegularToppings> regularToppings;
     private SauceTypes sauce;
     private boolean isToasted;
 
 
-    public SandwichMaker(BreadTypes breadTypes, SandwichSize size, MeatType meat, boolean extraMeat, CheeseType cheese, List<RegularToppings> regularToppings, boolean extraCheese, SauceTypes sauce, boolean isToasted) {
+    public SandwichMaker(BreadTypes breadTypes, SandwichSize size, MeatType meat, boolean extraMeat, CheeseType cheese, boolean extraCheese, List<RegularToppings> regularToppings, SauceTypes sauce, boolean isToasted) {
         this.breadTypes = breadTypes;
         this.size = size;
         this.meat = meat;
         this.extraMeat = extraMeat;
         this.cheese = cheese;
-        this.regularToppings = regularToppings;
         this.extraCheese = extraCheese;
+        this.regularToppings = regularToppings;
         this.sauce = sauce;
         this.isToasted = isToasted;
     }

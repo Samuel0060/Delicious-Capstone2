@@ -101,14 +101,14 @@ public class UserInterface {
 
         //bread
         BreadTypes chosenBreadType = getBreadType();
-       // sandwich.setBreadType(getBreadType(scanner));
         //size
-        SandwichSize chosenSandwichSize = getSandwichSize(scanner);
+        SandwichSize chosenSandwichSize = getSandwichSize();
         //meat
         MeatType meat = getUserMeat();
         //extra meat
         boolean extraMeat =extraMeat();
-        List<RegularToppings> regTops = selectRegularToppings(scanner);
+        //regular toppings
+        List<RegularToppings> regTops = selectRegularToppings();
         //cheese
 
         //extraCheese
@@ -170,8 +170,6 @@ public class UserInterface {
     }
 
     public static MeatType getUserMeat() {
-
-
         System.out.println("What type of meat would you like?");
         System.out.println("1) Steak");
         System.out.println("2) Ham");
@@ -220,11 +218,49 @@ public class UserInterface {
     }
 
     static CheeseType getUserCheese() {
+        System.out.println("What type of Cheese would you like?");
+        System.out.println("1) American");
+        System.out.println("2) Provolone");
+        System.out.println("3) Cheddar");
+        System.out.println("4) Swiss");
+
+        String userCheeseChoice;
+        while(true){
+            userCheeseChoice = scanner.nextLine();
+
+            switch(userCheeseChoice) {
+                case "1":
+                    return CheeseType.AMERICAN;
+                case "2":
+                    return CheeseType.PROVOLONE;
+                case "3":
+                    return CheeseType.CHEDDAR;
+                case "4":
+                    return CheeseType.SWISS;
+                default:
+                    System.out.println("Please pick a number between 1 and 4");
+            }
+        }
+    }
+
+    static boolean extraCheese() {
+        System.out.println("Extra??");
+        System.out.printf("Y/N");
+
+        String choice = scanner.nextLine();
+
+        switch (choice.toUpperCase()){
+            case "Y":
+                return true;
+            case "N":
+                return false;
+            default:
+                return false;
+        }
 
     }
 
-
-    public static List<RegularToppings> selectRegularToppings(Scanner scanner) {
+    public static List<RegularToppings> selectRegularToppings() {
         List<RegularToppings> selectedToppings = new ArrayList<>();
         boolean done = false;
 
@@ -255,6 +291,37 @@ public class UserInterface {
         }
 
         return selectedToppings;
+    }
+
+    static SauceTypes getUserSauces() {
+        System.out.println("What type of Sauce would you like?");
+        System.out.println("1) Mayo");
+        System.out.println("2) Mustard");
+        System.out.println("3) Ketchup");
+        System.out.println("4) Ranch");
+        System.out.println("5) Thousand Islands");
+        System.out.println("6) Vinaigrette");
+
+        String userSauce;
+        while(true) {
+            userSauce = scanner.nextLine();
+            switch (userSauce) {
+                case "1":
+                    return SauceTypes.MAYO;
+                case "2":
+                    return SauceTypes.MUSTARD;
+                case "3":
+                    return SauceTypes.KETCHUP;
+                case "4":
+                    return SauceTypes.RANCH;
+                case "5":
+                    return SauceTypes.THOUSAND_ISLANDS;
+                case "6":
+                    return SauceTypes.VINAIGRETTE;
+                default:
+                    System.out.println("Please pick a number between 1-6");
+            }
+        }
     }
 
     static Drink addDrinkToOrder(){
