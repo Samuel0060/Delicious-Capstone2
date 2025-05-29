@@ -21,8 +21,8 @@ public class Order {
         return drink;
     }
 
-    public void addDrink() {
-        this.drink = new Drink(); // Create the single type of chips
+    public void addDrink(Drink drink) {
+        this.drink = drink; // Create the single type of chips
     }
 
     public void removeDrink() {

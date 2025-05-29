@@ -5,7 +5,7 @@ public class Drink {
     private DrinkSizes size;
 
 
-    public Drink() {
+    public Drink(String name, DrinkSizes size) {
         this.name = name;
         this.size = size;
     }
