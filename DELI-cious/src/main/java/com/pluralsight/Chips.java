@@ -2,9 +2,9 @@ package com.pluralsight;
 
 public class Chips {
     private final String name = "Chips";
-    private final double price = 1.50;
+//    private final double price = 1.50;
 
-    public Chips() {
+    public Chips(String name) {
     }
 
     public String getName() {
@@ -12,11 +12,12 @@ public class Chips {
     }
 
     public double getPrice() {
+        double price = 1.50;
         return price;
     }
 
     @Override
     public String toString() {
-        return name + " ($" + String.format("%.2f", price) + ")";
+        return name;
     }
 }

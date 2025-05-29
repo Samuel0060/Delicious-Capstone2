@@ -79,10 +79,12 @@ public class UserInterface {
                     break;
 
                 case "3":
+                    currentOrder.addChips(addChipsToOrder());
                     break;
 
                 case "4":
                     //checkout
+                    displayCheckoutScreen();
                     //call the checkout method
                     isOrdering=false;
 
@@ -97,7 +99,7 @@ public class UserInterface {
 
     public static SandwichMaker createSandwich(){
 
-       // SandwichMaker sandwich = new SandwichMaker();
+//        SandwichMaker sandwich = new SandwichMaker();
 
         //bread
         BreadTypes chosenBreadType = getBreadType();
@@ -107,20 +109,31 @@ public class UserInterface {
         MeatType meat = getUserMeat();
         //extra meat
         boolean extraMeat =extraMeat();
+        //cheese
+        CheeseType cheese = getUserCheese();
+        //extraCheese
+        boolean extraCheese = extraCheese();
         //regular toppings
         List<RegularToppings> regTops = selectRegularToppings();
-        //cheese
+        //sauce
+        SauceTypes sauce = getUserSauces();
+        //toasted
+        boolean isToasted = isItToasted();
 
-        //extraCheese
 
 
 
-        return new SandwichMaker(chosenBreadType,chosenSandwichSize,meat,extraMeat,CheeseType.AMERICAN,regTops,true,SauceTypes.MAYO,true);
+        return new SandwichMaker(chosenBreadType,
+                chosenSandwichSize,
+                meat,
+                extraMeat,
+                cheese,
+                extraCheese,
+                regTops,
+                sauce,
+                isToasted);
 
     }
-
-
-
 
     public static BreadTypes getBreadType() {
         System.out.println("What type of bread would you like?");
@@ -147,7 +160,7 @@ public class UserInterface {
         }
     }
 
-    public static SandwichSize getSandwichSize(Scanner scanner) {
+    public static SandwichSize getSandwichSize() {
         System.out.println("What size would you like?");
         System.out.println("1) 4\"");
         System.out.println("2) 8\"");
@@ -245,7 +258,7 @@ public class UserInterface {
 
     static boolean extraCheese() {
         System.out.println("Extra??");
-        System.out.printf("Y/N");
+        System.out.println("Y/N");
 
         String choice = scanner.nextLine();
 
@@ -324,6 +337,25 @@ public class UserInterface {
         }
     }
 
+    static boolean isItToasted() {
+        System.out.println("Would you like it toasted?");
+        System.out.println("Y/N");
+
+        String userToastedChoice;
+        while (true) {
+            userToastedChoice = scanner.nextLine().toUpperCase();
+            switch (userToastedChoice) {
+                case "Y":
+                    return true;
+                case "N":
+                    return false;
+                default:
+                    return false;
+            }
+        }
+
+    }
+
     static Drink addDrinkToOrder(){
 
         String flavor = "";
@@ -333,6 +365,10 @@ public class UserInterface {
         System.out.println("""
                 1) Coke
                 2) Sprite
+                3) Pepsi
+                4) Starry
+                5) Fruit Punch
+                6) Water
                 """);
 
         String flavorInt = scanner.nextLine();
@@ -341,6 +377,22 @@ public class UserInterface {
             case "1":
                 flavor = "Coke";
                 break;
+            case "2":
+                flavor = "Sprite";
+                break;
+            case "3":
+                flavor = "Pepsi";
+                break;
+            case "4":
+                flavor = "Starry";
+                break;
+            case "5":
+                flavor = "Fruit Punch";
+                break;
+            case "6":
+                flavor = "Water";
+            default:
+                System.out.println("Please pick a number 1-6");
         }
 
         System.out.println("""
@@ -354,13 +406,49 @@ public class UserInterface {
         switch (sizeInt){
             case "1":
             break;
-
             case "2":
                 size = DrinkSizes.MEDIUM;
                 break;
+            case "3":
+                size = DrinkSizes.LARGE;
         }
         return new Drink(flavor,size);
 
+    }
+
+    static Chips addChipsToOrder() {
+
+        String name;
+        System.out.println("Select Chips");
+        System.out.println("""
+                1) Doritos
+                2) Lays
+                3) Cheetos
+                4) Fritos
+                """);
+
+        String userChipsChoice;
+        while (true) {
+            userChipsChoice = scanner.nextLine();
+            switch (userChipsChoice) {
+                case "1":
+                    name = "Doritos";
+                    break;
+                case "2":
+                    name = "Lays";
+                case "3":
+                    name = "Cheetos";
+                case "4":
+                    name = "Fritos";
+                default:
+                    System.out.println("Please pick a number 1-4");
+            }
+        }
+
+    }
+
+    static Order displayCheckoutScreen() {
+        return currentOrder;
     }
 }
 

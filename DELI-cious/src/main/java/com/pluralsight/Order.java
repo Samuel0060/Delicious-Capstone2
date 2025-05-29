@@ -37,8 +37,8 @@ public class Order {
         return chips;
     }
 
-    public void addChips() {
-        this.chips = new Chips(); // Create the single type of chips
+    public void addChips(Chips chips) {
+        this.chips = chips; // Create the single type of chips
     }
 
     public void removeChips() {
