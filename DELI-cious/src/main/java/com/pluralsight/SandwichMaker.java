@@ -137,17 +137,22 @@ public class SandwichMaker {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("1 Sandwich\n");
-        sb.append("").append(breadTypes);
-        sb.append(", size=").append(size);
-        sb.append(", meat=").append(meat);
-        sb.append(", extraMeat=").append(extraMeat);
-        sb.append(", cheese=").append(cheese);
-        sb.append(", extraCheese=").append(extraCheese);
-        sb.append(", regularToppings=").append(regularToppings);
-        sb.append(", sauce=").append(sauce);
-        sb.append(", isToasted=").append(isToasted);
-        sb.append('}');
+        final StringBuilder sb = new StringBuilder();
+        sb.append("----- Sam's Deli Receipt -----\n");
+        sb.append("Item: 1 Sandwich \t\t\t ").append(calculateSandwichPrice()).append("\n");
+        sb.append("-----------------------------\n");
+        sb.append("Bread:        ").append(breadTypes).append("\n");
+        sb.append("Size:         ").append(size.getName()).append("\n");
+        sb.append("Meat:         ").append(meat).append("\n");
+        sb.append("  Extra Meat: ").append(extraMeat ? "Yes" : "No").append("\n");
+        sb.append("Cheese:       ").append(cheese).append("\n");
+        sb.append("  Extra Cheese: ").append(extraCheese ? "Yes" : "No").append("\n");
+        sb.append("Toppings:     ").append(regularToppings).append("\n");
+        sb.append("Sauce:        ").append(sauce).append("\n");
+        sb.append("Toasted:      ").append(isToasted ? "Yes" : "No").append("\n");
+        sb.append("\n");
+
+
         return sb.toString();
     }
 }

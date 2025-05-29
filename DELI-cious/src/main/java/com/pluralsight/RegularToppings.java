@@ -35,6 +35,14 @@ public class RegularToppings extends AbstractToppings{
     public double getPrice(SandwichSize size) {
         return 0;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder();
+        sb.append("").append(name).append('\t');
+        sb.append('\n');
+        return sb.toString();
+    }
 }
 
 

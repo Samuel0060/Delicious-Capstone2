@@ -68,11 +68,15 @@ public class Order {
         orderDetails.append(sandwich.toString()).append("\n"); // Include sandwich details
 
         if (hasChips()) {
-            orderDetails.append("  Chips: ").append(chips.toString()).append("\n");
-            orderDetails.append("  Chips Cost: $").append(String.format("%.2f", chips.getPrice())).append("\n");
+            orderDetails.append("Chips: ").append(chips.toString()).append("\t\t").append(String.format("%.2f", chips.getPrice())).append("\n");
         } else {
-            orderDetails.append("  Chips: None\n");
-            orderDetails.append("  Chips Cost: $0.00\n");
+            orderDetails.append("Chips: None\t\t").append("$0.00\n");
+        }
+
+        if (hasDrink()) {
+            orderDetails.append("Drink: ").append(chips.toString()).append("\t\t").append(String.format("%.2f", chips.getPrice())).append("\n");
+        } else {
+            orderDetails.append("Drink: None\t\t").append("$0.00\n");
         }
 
         orderDetails.append("----------------------\n");
