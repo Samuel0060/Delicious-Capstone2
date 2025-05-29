@@ -1,0 +1,138 @@
+package com.pluralsight;
+
+import java.util.List;
+
+public class SandwichMaker {
+    private BreadTypes breadTypes;
+    private SandwichSize size;
+    private MeatType meat;
+    private boolean extraMeat;
+    private CheeseType cheese;
+    private List<RegularToppings> regularToppings;
+    private boolean extraCheese;
+    private SauceTypes sauce;
+    private boolean isToasted;
+
+
+    public SandwichMaker(BreadTypes breadTypes, SandwichSize size, MeatType meat, boolean extraMeat, CheeseType cheese, List<RegularToppings> regularToppings, boolean extraCheese, SauceTypes sauce, boolean isToasted) {
+        this.breadTypes = breadTypes;
+        this.size = size;
+        this.meat = meat;
+        this.extraMeat = extraMeat;
+        this.cheese = cheese;
+        this.regularToppings = regularToppings;
+        this.extraCheese = extraCheese;
+        this.sauce = sauce;
+        this.isToasted = isToasted;
+    }
+
+    public BreadTypes getBreadTypes() {
+        return breadTypes;
+    }
+
+    public void setBreadTypes(BreadTypes breadTypes) {
+        this.breadTypes = breadTypes;
+    }
+
+    public SandwichSize getSize() {
+        return size;
+    }
+
+    public void setSize(SandwichSize size) {
+        this.size = size;
+    }
+
+    public MeatType getMeat() {
+        return meat;
+    }
+
+    public void setMeat(MeatType meat) {
+        this.meat = meat;
+    }
+
+    public boolean isExtraMeat() {
+        return extraMeat;
+    }
+
+    public void setExtraMeat(boolean extraMeat) {
+        this.extraMeat = extraMeat;
+    }
+
+    public CheeseType getCheese() {
+        return cheese;
+    }
+
+    public void setCheese(CheeseType cheese) {
+        this.cheese = cheese;
+    }
+
+    public boolean isExtraCheese() {
+        return extraCheese;
+    }
+
+    public void setExtraCheese(boolean extraCheese) {
+        this.extraCheese = extraCheese;
+    }
+
+    public List<RegularToppings> getRegularToppings() {
+        return regularToppings;
+    }
+
+    public void setRegularToppings(List<RegularToppings> regularToppings) {
+        this.regularToppings = regularToppings;
+    }
+
+    public SauceTypes getSauce() {
+        return sauce;
+    }
+
+    public void setSauce(SauceTypes sauce) {
+        this.sauce = sauce;
+    }
+
+    public boolean isToasted() {
+        return isToasted;
+    }
+
+    public void setToasted(boolean toasted) {
+        isToasted = toasted;
+    }
+
+    public double getBasePrice() {
+        return switch (this.size) {
+            case FOUR_INCH -> 5.50;
+            case EIGHT_INCH -> 7.00;
+            case TWELVE_INCH -> 8.50;
+        };
+    }
+    public double calculateCheesePrice() {
+        double cheesePrice = cheese.getCheese().getPrice(size);
+
+        if (extraCheese) {
+            switch (size) {
+                case FOUR_INCH -> cheesePrice += .50;
+                case EIGHT_INCH -> cheesePrice += 1.50;
+                case TWELVE_INCH -> cheesePrice += 2.25;
+            }
+        }
+            return cheesePrice;
+    }
+
+    public double calculateMeatPrice() {
+        double meatPrice = meat.getMeat().getPrice(size);
+
+        if (extraMeat) {
+            switch (size) {
+                case FOUR_INCH -> meatPrice += .50;
+                case EIGHT_INCH -> meatPrice += 1.50;
+                case TWELVE_INCH -> meatPrice += 2.25;
+            }
+        }
+        return meatPrice;
+    }
+
+    public double calculateSandwichPrice() {
+        return getBasePrice() + calculateCheesePrice() + calculateMeatPrice();
+    }
+}
+
