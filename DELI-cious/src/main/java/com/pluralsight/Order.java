@@ -64,7 +64,7 @@ public class Order {
     @Override
     public String toString() {
         StringBuilder orderDetails = new StringBuilder();
-        orderDetails.append("--- Customer Order ---\n");
+        orderDetails.append("--- Your Order ---\n");
         orderDetails.append(sandwich.toString()).append("\n"); // Include sandwich details
 
         if (hasChips()) {

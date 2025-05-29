@@ -418,7 +418,7 @@ public class UserInterface {
 
     static Chips addChipsToOrder() {
 
-        String name;
+        String name = "";
         System.out.println("Select Chips");
         System.out.println("""
                 1) Doritos
@@ -428,7 +428,6 @@ public class UserInterface {
                 """);
 
         String userChipsChoice;
-        while (true) {
             userChipsChoice = scanner.nextLine();
             switch (userChipsChoice) {
                 case "1":
@@ -443,12 +442,12 @@ public class UserInterface {
                 default:
                     System.out.println("Please pick a number 1-4");
             }
-        }
+        return new Chips(name);
 
     }
 
-    static Order displayCheckoutScreen() {
-        return currentOrder;
+    static void displayCheckoutScreen() {
+        System.out.println(currentOrder);
     }
 }
 

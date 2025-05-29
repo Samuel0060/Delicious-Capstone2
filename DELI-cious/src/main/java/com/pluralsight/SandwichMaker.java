@@ -134,5 +134,21 @@ public class SandwichMaker {
     public double calculateSandwichPrice() {
         return getBasePrice() + calculateCheesePrice() + calculateMeatPrice();
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("1 Sandwich\n");
+        sb.append("").append(breadTypes);
+        sb.append(", size=").append(size);
+        sb.append(", meat=").append(meat);
+        sb.append(", extraMeat=").append(extraMeat);
+        sb.append(", cheese=").append(cheese);
+        sb.append(", extraCheese=").append(extraCheese);
+        sb.append(", regularToppings=").append(regularToppings);
+        sb.append(", sauce=").append(sauce);
+        sb.append(", isToasted=").append(isToasted);
+        sb.append('}');
+        return sb.toString();
+    }
 }
 
