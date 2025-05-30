@@ -1,0 +1,22 @@
+======= Your Receipt =======
+Sandwich 1:
+----- Sandwich Details -----
+Bread:         Wheat               
+Size:          12"                 
+Meat:          Steak                $3.00
+  Extra Meat:   No                 
+Cheese:        Cheddar              $2.25
+  Extra Cheese: No                 
+Toppings:
+               - LETTUCE
+               - ONIONS
+Sauce:         MAYO                
+Toasted:       No                  
+
+Sandwich Subtotal:         $13.75
+-------------------------------
+
+Chips: None		$0.00
+Drink: None		$0.00
+-------------------------------
+Total Order Price: $13.75

@@ -70,7 +70,7 @@ public class Order {
         sb.append("======= Your Receipt =======\n");
 
         if (sandwiches.isEmpty()) {
-            sb.append("No sandwiches ordered.\n");
+            sb.append("No sandwiches ordered.\n\n");
         } else {
             int count = 1;
             for (SandwichMaker sandwich : sandwiches) {

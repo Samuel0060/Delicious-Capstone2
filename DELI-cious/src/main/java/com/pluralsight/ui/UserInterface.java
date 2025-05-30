@@ -95,7 +95,6 @@ public class UserInterface {
                     break;
 
                 case "5":
-                    displayMainMenuScreen();
                     //back to main menu
                     isOrdering=false;
                     break;
@@ -301,20 +300,19 @@ public class UserInterface {
             System.out.print("Your choice: ");
             String input = scanner.nextLine().trim();
 
-            int choice = scanner.nextInt();
+            int choice;
             try {
                 choice = Integer.parseInt(input);
             } catch (NumberFormatException e) {
                 System.out.println("Invalid input. Please enter a number.");
                 continue;  // restart the loop
             }
-            scanner.nextLine();
 
             if (choice == 0) {
                 done = true;
             } else if (choice > 0 && choice <= RegularToppingType.values().length) {
                 RegularToppingType toppingType = RegularToppingType.values()[choice - 1];
-                RegularToppings topping = new RegularToppings(toppingType.name());
+                RegularToppings topping = new RegularToppings(toppingType.getName());
 
                 selectedToppings.add(topping);
                 System.out.println(topping.getName() + " added!");
@@ -358,22 +356,24 @@ public class UserInterface {
     }
 
     static boolean isItToasted() {
-        System.out.println("Would you like it toasted?");
-        System.out.println("Y/N");
 
-        String userToastedChoice;
-        while (true) {
-            userToastedChoice = scanner.nextLine().toUpperCase();
-            switch (userToastedChoice) {
-                case "Y":
-                    return true;
-                case "N":
-                    return false;
-                default:
-                    return false;
+        while(true) {
+            System.out.println("Would you like it toasted?");
+            System.out.println("Y/N");
+
+            String userToastedChoice;
+            while (true) {
+                userToastedChoice = scanner.nextLine().toUpperCase();
+                switch (userToastedChoice) {
+                    case "Y":
+                        return true;
+                    case "N":
+                        return false;
+                    default:
+                        System.out.println("Please pick \"y\" for yes or \"n\" for no.");
+                }
             }
         }
-
     }
 
     static Drink addDrinkToOrder(){

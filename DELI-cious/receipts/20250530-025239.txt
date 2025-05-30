@@ -1,0 +1,22 @@
+======= Your Receipt =======
+Sandwich 1:
+----- Sandwich Details -----
+Bread:         Wheat               
+Size:          8"                  
+Meat:          Ham                  $3.50
+  Extra Meat:   Yes                
+Cheese:        Cheddar              $2.10
+  Extra Cheese: Yes                
+Toppings:
+               - Onions
+               - Tomatoes
+Sauce:         VINAIGRETTE         
+Toasted:       Yes                 
+
+Sandwich Subtotal:         $12.60
+-------------------------------
+
+Chips: None		$0.00
+Drink: Sprite		$2.50
+-------------------------------
+Total Order Price: $15.10

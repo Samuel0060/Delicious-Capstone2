@@ -1,0 +1,6 @@
+======= Your Receipt =======
+No sandwiches ordered.
+Chips: None		$0.00
+Drink: Pepsi		$2.50
+-------------------------------
+Total Order Price: $2.50
