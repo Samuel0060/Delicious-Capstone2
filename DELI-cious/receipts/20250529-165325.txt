@@ -1,0 +1,21 @@
+--- Your Order ---
+----- Sam's Deli Receipt -----
+Item: 1 Sandwich 			 8.55
+-----------------------------
+Bread:        WHITE
+Size:         4"
+Meat:         STEAK
+  Extra Meat: Yes
+Cheese:       AMERICAN
+  Extra Cheese: Yes
+Toppings:     [ONIONS	
+, JALAPENOS	
+]
+Sauce:        MAYO
+Toasted:      Yes
+
+
+Chips: Chips		1.50
+Drink: Chips		1.50
+----------------------
+Total Order Price: $12.55

@@ -5,16 +5,22 @@ public class Order {
     private Chips chips;
     private Drink drink;// Optional: can be null if no chips are ordered
 
-    public Order(SandwichMaker sandwich) {
-        if (sandwich == null) {
-            throw new IllegalArgumentException("An order must include a sandwich.");
-        }
-        this.sandwich = sandwich;
+    public Order(){
     }
 
+    public Order(SandwichMaker sandwich) {
+//        if (sandwich == null) {
+//            throw new IllegalArgumentException("An order must include a sandwich.");
+//        }
+        this.sandwich = sandwich;
+    }
     // --- Getters and Setters for Order Components ---
     public SandwichMaker getSandwich() {
         return sandwich;
+    }
+
+    public void addSandwich(SandwichMaker sandwich){
+        this.sandwich = sandwich;
     }
 
     public Drink getDrink() {
@@ -65,16 +71,20 @@ public class Order {
     public String toString() {
         StringBuilder orderDetails = new StringBuilder();
         orderDetails.append("--- Your Order ---\n");
-        orderDetails.append(sandwich.toString()).append("\n"); // Include sandwich details
-
+        if(sandwich!=null) {
+            orderDetails.append(sandwich.toString()).append("\n"); // Include sandwich details
+        }
+        else {
+            orderDetails.append("Sandwich: None\t\t$0.00\n");
+        }
         if (hasChips()) {
-            orderDetails.append("Chips: ").append(chips.toString()).append("\t\t").append(String.format("%.2f", chips.getPrice())).append("\n");
+            orderDetails.append("Chips: ").append(chips.getName()).append("\t\t").append(String.format("%.2f", chips.getPrice())).append("\n");
         } else {
             orderDetails.append("Chips: None\t\t").append("$0.00\n");
         }
 
         if (hasDrink()) {
-            orderDetails.append("Drink: ").append(chips.toString()).append("\t\t").append(String.format("%.2f", chips.getPrice())).append("\n");
+            orderDetails.append("Drink: ").append(drink.toString()).append("\t\t").append(String.format("%.2f", drink.getBasePrice())).append("\n");
         } else {
             orderDetails.append("Drink: None\t\t").append("$0.00\n");
         }

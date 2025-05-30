@@ -1,0 +1,22 @@
+--- Your Order ---
+----- Sam's Deli Receipt -----
+Item: 1 Sandwich 		 16.7
+-----------------------------
+Bread:        RYE
+Size:         12"
+Meat:         SALAMI
+  Extra Meat: Yes
+Cheese:       PROVOLONE
+  Extra Cheese: Yes
+Toppings:     [PEPPERS	
+, TOMATOES	
+, JALAPENOS	
+]
+Sauce:        MUSTARD
+Toasted:      Yes
+
+
+Chips: None		$0.00
+Drink: None		$0.00
+----------------------
+Total Order Price: $16.70

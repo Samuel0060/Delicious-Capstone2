@@ -1,10 +1,10 @@
 package com.pluralsight;
 
 public class Chips {
-    private final String name = "Chips";
-//    private final double price = 1.50;
+    private String name;
 
     public Chips(String name) {
+        this.name = name;
     }
 
     public String getName() {

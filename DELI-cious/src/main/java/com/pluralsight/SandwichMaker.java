@@ -110,9 +110,9 @@ public class SandwichMaker {
 
         if (extraCheese) {
             switch (size) {
-                case FOUR_INCH -> cheesePrice += .50;
-                case EIGHT_INCH -> cheesePrice += 1.50;
-                case TWELVE_INCH -> cheesePrice += 2.25;
+                case FOUR_INCH -> cheesePrice += .30;
+                case EIGHT_INCH -> cheesePrice += .60;
+                case TWELVE_INCH -> cheesePrice += .90;
             }
         }
             return cheesePrice;
@@ -123,9 +123,9 @@ public class SandwichMaker {
 
         if (extraMeat) {
             switch (size) {
-                case FOUR_INCH -> meatPrice += .50;
+                case FOUR_INCH -> meatPrice += 1.00;
                 case EIGHT_INCH -> meatPrice += 1.50;
-                case TWELVE_INCH -> meatPrice += 2.25;
+                case TWELVE_INCH -> meatPrice += 2.05;
             }
         }
         return meatPrice;
@@ -139,7 +139,7 @@ public class SandwichMaker {
     public String toString() {
         final StringBuilder sb = new StringBuilder();
         sb.append("----- Sam's Deli Receipt -----\n");
-        sb.append("Item: 1 Sandwich \t\t\t ").append(calculateSandwichPrice()).append("\n");
+        sb.append("Item: 1 Sandwich \t\t ").append(String.format("%.2f",calculateSandwichPrice())).append("\n");
         sb.append("-----------------------------\n");
         sb.append("Bread:        ").append(breadTypes).append("\n");
         sb.append("Size:         ").append(size.getName()).append("\n");

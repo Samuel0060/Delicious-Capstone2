@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class UserInterface {
    static Scanner scanner = new Scanner(System.in);
-    static Order currentOrder = null;
+
     public static void main(String[] args) {
 
 
@@ -23,7 +23,7 @@ public class UserInterface {
                 case "2":
                     running = false;
                     System.out.println("Later hungry friend!");
-                    System.out.println(currentOrder);
+                    break;
             }
 
         }
@@ -45,7 +45,7 @@ public class UserInterface {
 
     public static void displayNewOrderMenu() {
 
-
+        Order currentOrder = new Order();
 
        // Scanner scanner = new Scanner(System.in);
 
@@ -70,8 +70,8 @@ public class UserInterface {
             switch (option) {
                 case "1":
                     //add Sandwich
-                    currentOrder = new Order(createSandwich());
-
+//              SandwichMaker sandwich = createSandwich();
+              currentOrder.addSandwich(createSandwich());
                     break;
 
                 case "2":
@@ -84,17 +84,18 @@ public class UserInterface {
 
                 case "4":
                     //checkout
-                    displayCheckoutScreen();
+                    displayCheckoutScreen(currentOrder);
                     //call the checkout method
                     isOrdering=false;
+                    break;
 
+                case "5":
+                    displayMainMenuScreen();
+                    //back to main menu
+                    isOrdering=false;
+                    break;
             }
-
-
         } //end of the while loop
-
-
-
     }
 
     public static SandwichMaker createSandwich(){
@@ -215,7 +216,7 @@ public class UserInterface {
 
     static boolean extraMeat(){
         System.out.println("Extra??");
-        System.out.printf("Y/N");
+        System.out.println("Y/N");
 
         String choice = scanner.nextLine();
 
@@ -225,9 +226,9 @@ public class UserInterface {
             case "N":
                 return false;
             default:
-                return false;
+                System.out.println("Please pick \"y\" for yes or \"n\" for no.");
         }
-
+        return false;
     }
 
     static CheeseType getUserCheese() {
@@ -435,18 +436,24 @@ public class UserInterface {
                     break;
                 case "2":
                     name = "Lays";
+                    break;
                 case "3":
                     name = "Cheetos";
+                    break;
                 case "4":
                     name = "Fritos";
+                    break;
                 default:
                     System.out.println("Please pick a number 1-4");
+                    break;
             }
         return new Chips(name);
 
     }
 
-    static void displayCheckoutScreen() {
+    static void displayCheckoutScreen(Order currentOrder) {
+        FileManager.save(currentOrder);
+   //1
         System.out.println(currentOrder);
     }
 }

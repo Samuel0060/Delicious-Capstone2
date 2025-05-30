@@ -1,0 +1,21 @@
+--- Your Order ---
+----- Sam's Deli Receipt -----
+Item: 1 Sandwich 		 16.7
+-----------------------------
+Bread:        WHEAT
+Size:         12"
+Meat:         STEAK
+  Extra Meat: Yes
+Cheese:       CHEDDAR
+  Extra Cheese: Yes
+Toppings:     [ONIONS	
+, JALAPENOS	
+]
+Sauce:        MUSTARD
+Toasted:      Yes
+
+
+Chips: Cheetos		1.50
+Drink: Sprite		2.50
+----------------------
+Total Order Price: $20.70
