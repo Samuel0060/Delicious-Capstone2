@@ -19,6 +19,11 @@ Receipt Management: Receipts are saved to a designated folder for record-keeping
 
 [DELI Layout.pdf](https://github.com/user-attachments/files/20517173/DELI.Layout.pdf)
 
+![image](https://github.com/user-attachments/assets/56039a96-02d4-41c9-94dd-503e54309898)
+
+This code up above was probably my most interesting piece of code. This allowed the user to constantly pick however many toppings they wanted. It would ask them to choose which
+toppings they wanted until they werew finish with toppings.
+
 
 Getting Started
 Prerequisites
