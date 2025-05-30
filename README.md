@@ -12,7 +12,8 @@ When they are ready to purchase the order will be printede in front of them on a
 ![image](https://github.com/user-attachments/assets/7f2f97bf-4ee6-4d7e-b061-2b0f1d6b1435)
 ![image](https://github.com/user-attachments/assets/343eabad-c6e2-48d0-9389-f210dd7826c6)
 
-[Blank diagram.pdf](https://github.com/user-attachments/files/20517071/Blank.diagram.pdf)
+[DELI Layout.pdf](https://github.com/user-attachments/files/20517112/DELI.Layout.pdf)
+
 
 WHAT YOU CAN DO
   -Build out your sandwich(With toppings meat cheese lettuce with extras)
