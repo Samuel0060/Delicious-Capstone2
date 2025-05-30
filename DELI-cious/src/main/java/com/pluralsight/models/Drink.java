@@ -1,4 +1,6 @@
-package com.pluralsight;
+package com.pluralsight.models;
+
+import com.pluralsight.enums.DrinkSizes;
 
 public class Drink {
     private String name;

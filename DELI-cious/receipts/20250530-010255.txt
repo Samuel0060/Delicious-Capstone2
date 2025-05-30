@@ -1,0 +1,6 @@
+======= Sam's Deli Order =======
+No sandwiches ordered.
+Chips: None		$0.00
+Drink: Pepsi		$3.00
+-------------------------------
+Total Order Price: $3.00

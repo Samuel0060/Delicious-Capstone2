@@ -1,6 +1,8 @@
-package com.pluralsight;
+package com.pluralsight.enums;
 
- enum MeatType {
+import com.pluralsight.models.Meat;
+
+public enum MeatType {
     STEAK("Steak"),
     HAM("Ham"),
     SALAMI("Salami"),
@@ -20,17 +22,5 @@ package com.pluralsight;
 
     public String getName() {
         return meatInstance.getName();
-    }
-}
-
-public class Meat extends PremiumToppings {
-
-    public Meat(String name) {
-        super(name);
-    }
-
-    @Override
-    public String toString() {
-        return name;
     }
 }

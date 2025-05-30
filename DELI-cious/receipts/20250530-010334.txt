@@ -1,0 +1,26 @@
+======= Sam's Deli Order =======
+Sandwich 1:
+----- Sam's Deli Receipt -----
+Item: 1 Sandwich 		 16.70
+-----------------------------
+Bread:        RYE
+Size:         12"
+Meat:         ROAST_BEEF
+  Extra Meat: Yes
+Cheese:       SWISS
+  Extra Cheese: Yes
+Toppings:      
+               - ONIONS
+               - JALAPENOS
+               - LETTUCE
+               - TOMATOES
+               - CUCUMBERS
+               - PICKLES
+Sauce:        VINAIGRETTE
+Toasted:      Yes
+
+
+Chips: None		$0.00
+Drink: None		$0.00
+-------------------------------
+Total Order Price: $16.70

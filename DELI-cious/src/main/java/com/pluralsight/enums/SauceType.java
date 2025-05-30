@@ -1,6 +1,8 @@
-package com.pluralsight;
+package com.pluralsight.enums;
 
-enum SauceTypes {
+import com.pluralsight.models.Sauce;
+
+public enum SauceType {
     MAYO("Mayo"),
     MUSTARD("Mustard"),
     KETCHUP("Ketchup"),
@@ -10,7 +12,7 @@ enum SauceTypes {
 
     private final Sauce sauceInstance;
 
-    SauceTypes(String name) {
+    SauceType(String name) {
         this.sauceInstance = new Sauce(name);
     }
 
@@ -20,16 +22,5 @@ enum SauceTypes {
 
     public String getName() {
         return sauceInstance.getName();
-    }
-}
-
-public class Sauce extends RegularToppings{
-    public Sauce(String name) {
-        super(name);
-    }
-
-    @Override
-    public String toString() {
-        return name;
     }
 }

@@ -1,0 +1,6 @@
+======= Sam's Deli Order =======
+No sandwiches ordered.
+Chips: Cheetos		$1.50
+Drink: None		$0.00
+-------------------------------
+Total Order Price: $1.50

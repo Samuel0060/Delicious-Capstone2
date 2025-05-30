@@ -1,0 +1,19 @@
+======= Your Receipt =======
+Sandwich 1:
+Bread:        Rye
+Size:         12"
+Meat:         Salami
+5.05  Extra Meat: Yes
+Cheese:       Swiss3.15
+  Extra Cheese: Yes
+Toppings:      
+               - TOMATOES
+               - TOMATOES
+Sauce:        RANCH
+Toasted:      No
+
+		 16.7
+Chips: None		$0.00
+Drink: None		$0.00
+-------------------------------
+Total Order Price: $16.70

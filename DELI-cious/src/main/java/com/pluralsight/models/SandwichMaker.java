@@ -1,20 +1,22 @@
-package com.pluralsight;
+package com.pluralsight.models;
+
+import com.pluralsight.enums.*;
 
 import java.util.List;
 
 public class SandwichMaker {
-    private BreadTypes breadTypes;
+    private BreadType breadTypes;
     private SandwichSize size;
     private MeatType meat;
     private boolean extraMeat;
     private CheeseType cheese;
     private boolean extraCheese;
     private List<RegularToppings> regularToppings;
-    private SauceTypes sauce;
+    private SauceType sauce;
     private boolean isToasted;
 
 
-    public SandwichMaker(BreadTypes breadTypes, SandwichSize size, MeatType meat, boolean extraMeat, CheeseType cheese, boolean extraCheese, List<RegularToppings> regularToppings, SauceTypes sauce, boolean isToasted) {
+    public SandwichMaker(BreadType breadTypes, SandwichSize size, MeatType meat, boolean extraMeat, CheeseType cheese, boolean extraCheese, List<RegularToppings> regularToppings, SauceType sauce, boolean isToasted) {
         this.breadTypes = breadTypes;
         this.size = size;
         this.meat = meat;
@@ -26,11 +28,11 @@ public class SandwichMaker {
         this.isToasted = isToasted;
     }
 
-    public BreadTypes getBreadTypes() {
+    public BreadType getBreadTypes() {
         return breadTypes;
     }
 
-    public void setBreadTypes(BreadTypes breadTypes) {
+    public void setBreadTypes(BreadType breadTypes) {
         this.breadTypes = breadTypes;
     }
 
@@ -82,11 +84,11 @@ public class SandwichMaker {
         this.regularToppings = regularToppings;
     }
 
-    public SauceTypes getSauce() {
+    public SauceType getSauce() {
         return sauce;
     }
 
-    public void setSauce(SauceTypes sauce) {
+    public void setSauce(SauceType sauce) {
         this.sauce = sauce;
     }
 
@@ -138,22 +140,31 @@ public class SandwichMaker {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder();
-        sb.append("----- Sam's Deli Receipt -----\n");
-        sb.append("Item: 1 Sandwich \t\t ").append(String.format("%.2f",calculateSandwichPrice())).append("\n");
-        sb.append("-----------------------------\n");
-        sb.append("Bread:        ").append(breadTypes).append("\n");
-        sb.append("Size:         ").append(size.getName()).append("\n");
-        sb.append("Meat:         ").append(meat).append("\n");
-        sb.append("  Extra Meat: ").append(extraMeat ? "Yes" : "No").append("\n");
-        sb.append("Cheese:       ").append(cheese).append("\n");
-        sb.append("  Extra Cheese: ").append(extraCheese ? "Yes" : "No").append("\n");
-        sb.append("Toppings:     ").append(regularToppings).append("\n");
-        sb.append("Sauce:        ").append(sauce).append("\n");
-        sb.append("Toasted:      ").append(isToasted ? "Yes" : "No").append("\n");
-        sb.append("\n");
+        sb.append("----- Sandwich Details -----\n");
+        sb.append(String.format("Bread:         %-20s\n", breadTypes.getName()));
+        sb.append(String.format("Size:          %-20s\n", size.getName()));
+        sb.append(String.format("Meat:          %-20s $%.2f\n", meat.getName(), calculateMeatPrice()));
+        sb.append(String.format("  Extra Meat:   %-19s\n", extraMeat ? "Yes" : "No"));
+        sb.append(String.format("Cheese:        %-20s $%.2f\n", cheese.getName(), calculateCheesePrice()));
+        sb.append(String.format("  Extra Cheese: %-19s\n", extraCheese ? "Yes" : "No"));
 
+        sb.append("Toppings:\n");
+        if (regularToppings.isEmpty()) {
+            sb.append("               None\n");
+        } else {
+            for (RegularToppings topping : regularToppings) {
+                sb.append(String.format("               - %s\n", topping));
+            }
+        }
+
+        sb.append(String.format("Sauce:         %-20s\n", sauce));
+        sb.append(String.format("Toasted:       %-20s\n", isToasted ? "Yes" : "No"));
+        sb.append("\n");
+        sb.append(String.format("Sandwich Subtotal:         $%.2f\n", calculateSandwichPrice()));
+        sb.append("-------------------------------\n");
 
         return sb.toString();
     }
+
 }
 

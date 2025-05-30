@@ -1,6 +1,8 @@
-package com.pluralsight;
+package com.pluralsight.enums;
 
-enum RegularToppingType {
+import com.pluralsight.models.RegularToppings;
+
+public enum RegularToppingType {
     LETTUCE("Lettuce"),
     PEPPERS("Peppers"),
     ONIONS("Onions"),
@@ -25,24 +27,3 @@ enum RegularToppingType {
         return regularToppingsInstance.getName();
     }
 }
-public class RegularToppings extends AbstractToppings{
-
-    public RegularToppings(String name) {
-        super(name);
-    }
-
-    @Override
-    public double getPrice(SandwichSize size) {
-        return 0;
-    }
-
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder();
-        sb.append("").append(name).append('\t');
-        sb.append('\n');
-        return sb.toString();
-    }
-}
-
-

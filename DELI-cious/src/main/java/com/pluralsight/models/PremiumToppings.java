@@ -1,4 +1,6 @@
-package com.pluralsight;
+package com.pluralsight.models;
+
+import com.pluralsight.enums.SandwichSize;
 
 public class PremiumToppings extends AbstractToppings {
 

@@ -1,0 +1,35 @@
+======= Your Receipt =======
+Sandwich 1:
+Bread:        WHEAT
+Size:         8"
+Meat:         HAM
+  Extra Meat: No
+Cheese:       AMERICAN
+  Extra Cheese: No
+Toppings:      
+               - LETTUCE
+               - PEPPERS
+               - ONIONS
+Sauce:        MAYO
+Toasted:      No
+
+
+Sandwich 2:
+Bread:        RYE
+Size:         12"
+Meat:         SALAMI
+  Extra Meat: No
+Cheese:       CHEDDAR
+  Extra Cheese: No
+Toppings:      
+               - ONIONS
+               - TOMATOES
+               - JALAPENOS
+Sauce:        RANCH
+Toasted:      No
+
+
+Chips: None		$0.00
+Drink: None		$0.00
+-------------------------------
+Total Order Price: $24.25

@@ -1,4 +1,9 @@
-package com.pluralsight;
+package com.pluralsight.ui;
+
+import com.pluralsight.enums.*;
+import com.pluralsight.models.*;
+import com.pluralsight.utils.FileManager;
+import com.pluralsight.enums.DrinkSizes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -94,6 +99,8 @@ public class UserInterface {
                     //back to main menu
                     isOrdering=false;
                     break;
+                default:
+                    System.out.println("Please pick a number 1-5");
             }
         } //end of the while loop
     }
@@ -103,13 +110,13 @@ public class UserInterface {
 //        SandwichMaker sandwich = new SandwichMaker();
 
         //bread
-        BreadTypes chosenBreadType = getBreadType();
+        BreadType chosenBreadType = getBreadType();
         //size
         SandwichSize chosenSandwichSize = getSandwichSize();
         //meat
         MeatType meat = getUserMeat();
         //extra meat
-        boolean extraMeat =extraMeat();
+        boolean extraMeat = askForExtraMeat();
         //cheese
         CheeseType cheese = getUserCheese();
         //extraCheese
@@ -117,7 +124,7 @@ public class UserInterface {
         //regular toppings
         List<RegularToppings> regTops = selectRegularToppings();
         //sauce
-        SauceTypes sauce = getUserSauces();
+        SauceType sauce = getUserSauces();
         //toasted
         boolean isToasted = isItToasted();
 
@@ -136,7 +143,7 @@ public class UserInterface {
 
     }
 
-    public static BreadTypes getBreadType() {
+    public static BreadType getBreadType() {
         System.out.println("What type of bread would you like?");
         System.out.println("1) White");
         System.out.println("2) Wheat");
@@ -148,13 +155,13 @@ public class UserInterface {
             breadTypeChoice = scanner.nextLine().trim();
             switch (breadTypeChoice) {
                 case "1":
-                    return BreadTypes.WHITE;
+                    return BreadType.WHITE;
                 case "2":
-                    return BreadTypes.WHEAT;
+                    return BreadType.WHEAT;
                 case "3":
-                    return BreadTypes.RYE;
+                    return BreadType.RYE;
                 case "4":
-                    return BreadTypes.WRAP;
+                    return BreadType.WRAP;
                 default:
                     System.out.println("Please pick a number 1-4.");
             }
@@ -214,21 +221,22 @@ public class UserInterface {
         }
     }
 
-    static boolean extraMeat(){
-        System.out.println("Extra??");
-        System.out.println("Y/N");
+    static boolean askForExtraMeat() {
+        while (true) {
+            System.out.println("Extra??");
+            System.out.println("Y/N");
 
-        String choice = scanner.nextLine();
+            String choice = scanner.nextLine();
 
-        switch (choice.toUpperCase()){
-            case "Y":
-                return true;
-            case "N":
-                return false;
-            default:
-                System.out.println("Please pick \"y\" for yes or \"n\" for no.");
+            switch (choice.toUpperCase()) {
+                case "Y":
+                    return true;
+                case "N":
+                    return false;
+                default:
+                    System.out.println("Please pick \"y\" for yes or \"n\" for no.");
+            }
         }
-        return false;
     }
 
     static CheeseType getUserCheese() {
@@ -258,6 +266,9 @@ public class UserInterface {
     }
 
     static boolean extraCheese() {
+        while(true) {
+
+
         System.out.println("Extra??");
         System.out.println("Y/N");
 
@@ -269,10 +280,10 @@ public class UserInterface {
             case "N":
                 return false;
             default:
-                return false;
+                System.out.println("Please pick \"y\" for yes or \"n\" for no.");
         }
-
     }
+}
 
     public static List<RegularToppings> selectRegularToppings() {
         List<RegularToppings> selectedToppings = new ArrayList<>();
@@ -282,14 +293,22 @@ public class UserInterface {
             System.out.println("\nChoose a topping (type the number):");
             int index = 1;
             for (RegularToppingType type : RegularToppingType.values()) {
-                System.out.println(index + " - " + type.name());
+                System.out.println(index + " - " + type.getName());
                 index++;
             }
             System.out.println("0 - Done");
 
             System.out.print("Your choice: ");
+            String input = scanner.nextLine().trim();
+
             int choice = scanner.nextInt();
-            scanner.nextLine(); // clear newline
+            try {
+                choice = Integer.parseInt(input);
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a number.");
+                continue;  // restart the loop
+            }
+            scanner.nextLine();
 
             if (choice == 0) {
                 done = true;
@@ -307,7 +326,7 @@ public class UserInterface {
         return selectedToppings;
     }
 
-    static SauceTypes getUserSauces() {
+    static SauceType getUserSauces() {
         System.out.println("What type of Sauce would you like?");
         System.out.println("1) Mayo");
         System.out.println("2) Mustard");
@@ -321,17 +340,17 @@ public class UserInterface {
             userSauce = scanner.nextLine();
             switch (userSauce) {
                 case "1":
-                    return SauceTypes.MAYO;
+                    return SauceType.MAYO;
                 case "2":
-                    return SauceTypes.MUSTARD;
+                    return SauceType.MUSTARD;
                 case "3":
-                    return SauceTypes.KETCHUP;
+                    return SauceType.KETCHUP;
                 case "4":
-                    return SauceTypes.RANCH;
+                    return SauceType.RANCH;
                 case "5":
-                    return SauceTypes.THOUSAND_ISLANDS;
+                    return SauceType.THOUSAND_ISLANDS;
                 case "6":
-                    return SauceTypes.VINAIGRETTE;
+                    return SauceType.VINAIGRETTE;
                 default:
                     System.out.println("Please pick a number between 1-6");
             }
@@ -392,6 +411,7 @@ public class UserInterface {
                 break;
             case "6":
                 flavor = "Water";
+                break;
             default:
                 System.out.println("Please pick a number 1-6");
         }
@@ -453,7 +473,6 @@ public class UserInterface {
 
     static void displayCheckoutScreen(Order currentOrder) {
         FileManager.save(currentOrder);
-   //1
         System.out.println(currentOrder);
     }
 }

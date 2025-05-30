@@ -1,0 +1,40 @@
+======= Sam's Deli Order =======
+Sandwich 1:
+----- Sam's Deli Receipt -----
+Item: 1 Sandwich 		 8.55
+-----------------------------
+Bread:        WHITE
+Size:         4"
+Meat:         STEAK
+  Extra Meat: Yes
+Cheese:       AMERICAN
+  Extra Cheese: Yes
+Toppings:      
+               - LETTUCE
+               - TOMATOES
+Sauce:        KETCHUP
+Toasted:      Yes
+
+
+Sandwich 2:
+----- Sam's Deli Receipt -----
+Item: 1 Sandwich 		 8.55
+-----------------------------
+Bread:        WHITE
+Size:         4"
+Meat:         CHICKEN
+  Extra Meat: Yes
+Cheese:       AMERICAN
+  Extra Cheese: Yes
+Toppings:      
+               - TOMATOES
+               - TOMATOES
+               - TOMATOES
+Sauce:        MAYO
+Toasted:      No
+
+
+Chips: None		$0.00
+Drink: None		$0.00
+-------------------------------
+Total Order Price: $17.10
