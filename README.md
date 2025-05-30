@@ -16,7 +16,7 @@ When they are ready to purchase the order will be printede in front of them on a
 
 
 WHAT YOU CAN DO
-  -Build out your sandwich(With toppings meat cheese lettuce with extras)
+  -Build out your sandwich (toppings, meat, cheese, lettuce, with extras)
   -Add chips to order(Or not)
   -Add drink to order(Or not)
   -Receive receipt and move receipt to receipt folder
