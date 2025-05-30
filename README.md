@@ -1,32 +1,82 @@
-# Delicious-Capstone2
-
 DELI-cious Java Capstone Project
-DELI-cious is a Java-based capstone project developed to demonstrate proficiency in object-oriented programming, design patterns, and application development. The project is structured following standard Java conventions and is organized under the com.pluralsight package. It wallows the user to create an order that contains a sandwich, chips if the user inclines, and a drink if the user inclines.
-![image](https://github.com/user-attachments/assets/6f5cad43-27f5-43df-baa4-e031c66d8bea)
+DELI-cious is a console-based Java application developed as a capstone project to demonstrate proficiency in object-oriented programming, design patterns, and application development. The application allows users to create customized deli orders, including sandwiches with various options, chips, and drinks.
 
-Any user is welcome to create a new order within the DELI App.
-The user will be asked if they want to make a new order. Then they can choose what they would like to add to the order. If they choose sandwich, they build that sandwich out from they size of the sandwich and the bread type. They can include whatever meat and cheese they want and if they want extra they can add it too. 
-When they are ready to purchase the order will be printede in front of them on a receipt and the receipt will be added to the receipts folder.
-![image](https://github.com/user-attachments/assets/a850498c-624c-400f-9359-cdf9c2e03d0c)
-![image](https://github.com/user-attachments/assets/200d40be-e5e5-4301-ada6-fa4d45e0797e)
-![image](https://github.com/user-attachments/assets/7f2f97bf-4ee6-4d7e-b061-2b0f1d6b1435)
-![image](https://github.com/user-attachments/assets/343eabad-c6e2-48d0-9389-f210dd7826c6)
+![image](https://github.com/user-attachments/assets/ee0b6c74-8f73-42a0-a2c8-734a8f94a7ec)
+![image](https://github.com/user-attachments/assets/bca76be8-7384-48c5-b5ca-504210ad5fb5)
+![image](https://github.com/user-attachments/assets/a0889898-49fb-4cb2-8128-3201a416f5ce)
+![image](https://github.com/user-attachments/assets/f25d0023-4294-4c7b-8bc4-66173cd16bf3)
+![image](https://github.com/user-attachments/assets/87b9132c-aa73-40f9-ac96-144ed8f86bda)
 
-[DELI Layout.pdf](https://github.com/user-attachments/files/20517112/DELI.Layout.pdf)
-
-
-WHAT YOU CAN DO
-  -Build out your sandwich (toppings, meat, cheese, lettuce, with extras)
-  -Add chips to order(Or not)
-  -Add drink to order(Or not)
-  -Receive receipt and move receipt to receipt folder
-Project Structure
-The project's source code is located in the src/main/java/com/pluralsight directory. This package likely contains the main application logic, including classes and interfaces that define the core functionality of the DELI-cious application.
 
 Features
-Modular Architecture: Organized codebase with clear separation of concerns.
+Custom Sandwich Builder: Users can create sandwiches by selecting size, bread type, meats, cheeses, and toppings, with options for extras.
 
-Object-Oriented Design: Utilizes principles like encapsulation, inheritance, and polymorphism.
+Add Sides: Optionally include chips and drinks to complete the meal.
 
-Standard Java Conventions: Follows industry-standard coding practices for readability and maintainability.
-Pluralsight
+Order Summary: Upon completion, the application displays a detailed receipt of the order.
+
+Receipt Management: Receipts are saved to a designated folder for record-keeping.
+
+[DELI Layout.pdf](https://github.com/user-attachments/files/20517173/DELI.Layout.pdf)
+
+
+Getting Started
+Prerequisites
+Java Development Kit (JDK) 8 or higher
+
+An IDE like IntelliJ IDEA or Eclipse
+
+Installation
+Clone the repository:
+
+bash
+Copy
+Edit
+git clone https://github.com/Samuel0060/Delicious-Capstone2.git
+Navigate to the project directory:
+
+bash
+Copy
+Edit
+cd Delicious-Capstone2/DELI-cious
+Compile the project:
+
+bash
+Copy
+Edit
+javac -d bin src/main/java/com/pluralsight/ui/UserInterface.java
+Run the application:
+
+bash
+Copy
+Edit
+java -cp bin com.pluralsight.ui.UserInterface
+Project Structure
+The source code is organized under the com.pluralsight package, following standard Java conventions:
+
+ui: Handles user interactions and input/output operations.
+
+models: Contains classes representing the data structures used in the application.
+
+services: Implements the business logic and processes user requests.
+
+utils: Provides utility classes and methods to support the application's functionality.
+dining.columbia.edu
+
+Technologies Used
+Java
+
+Standard I/O for user interaction
+
+Contributing
+Contributions are welcome! Please fork the repository and submit a pull request for any enhancements or bug fixes.
+
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+Contact
+For any questions or feedback, please contact:
+
+Samuel0060
+
+GitHub: https://github.com/Samuel0060
